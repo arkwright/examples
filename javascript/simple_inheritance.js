@@ -1,7 +1,7 @@
 var Person = function(name){
   // JavaScript silently does this when calling a function
   // with 'new', e.g., new Person().
-  // var this = { __proto__: Person.prototype };
+  // var this = {};
 
   this.name = name;
 
@@ -11,13 +11,14 @@ var Person = function(name){
 
   // JavaScript silently does this when calling a function
   // with 'new', e.g., new Person().
+  // this.__proto__ = Person.prototype;
   // return this;
 };
 
 var WebDeveloper = function(name, skill){
   // JavaScript silently does this when calling a function
   // with 'new', e.g., new WebDeveloper().
-  // var this = { __proto__: WebDeveloper.prototype };
+  // var this = {};
 
   // Call superclass constructor, substituting the WebDeveloper 'this'.
   Person.apply(this, arguments);
@@ -30,6 +31,7 @@ var WebDeveloper = function(name, skill){
 
   // JavaScript silently does this when calling a function
   // with 'new', e.g., new WebDeveloper().
+  // this.__proto__ = WebDeveloper.prototype;
   // return this;
 };
 WebDeveloper.prototype = new Person(); // WebDeveloper pseudo-class extends Person pseudo-class.
